@@ -29,7 +29,6 @@ def produce_current_weather_data(api_key, cities, producer, topic):
 producer_conf = {'bootstrap.servers': 'localhost:9092'}
 producer = Producer(producer_conf)
 weather_topic = 'real_weather'
-api_key ='5578e1cea9e0cc8e85cb6bc123343faa'
 
 with open(r"cities.txt", 'r') as file:
     cities = [line.strip() for line in file]

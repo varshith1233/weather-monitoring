@@ -68,12 +68,6 @@ def consume_and_save_to_mongodb(consumer, topic, mongo_uri):
     finally:
         consumer.close()
 
-    # MongoDB connection setup
-    #username = urllib.parse.quote_plus("pintu")
-    #password = urllib.parse.quote_plus("MarchiPoya@12")
-mongo_uri = f"mongodb+srv://sayaniaram:sayaniaram@spark.65sppsm.mongodb.net/?retryWrites=true&w=majority&appName=spark"
-
-    # Check MongoDB connection
 if check_mongodb_connection(mongo_uri):
         # Kafka consumer configuration
     consumer_conf = {'bootstrap.servers': 'localhost:9092', 'group.id': 'weather-consumer', 'auto.offset.reset': 'earliest'}
